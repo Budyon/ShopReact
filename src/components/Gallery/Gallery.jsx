@@ -12,7 +12,7 @@ const Container = styled.div`
 
   .image-gallery-thumbnail-image {
     width: 100%;
-    height: 101px;
+    height: 100px;
   }
 
   .image-gallery-image {
