@@ -232,7 +232,7 @@ const Product = ({ product, handleClickButton, productToCart, handleChangeCount,
         <Main>
           <Header>
             <Title>{product.title}</Title>
-            <Brand>BY {product.brand.toUpperCase()}</Brand>
+            <Brand>BY {(product.brand || product.title).toUpperCase()}</Brand>
           </Header>
           <FullPrice>
             <Price>${Math.floor((product.price - (product.price * product.discountPercentage / 100)))}</Price>

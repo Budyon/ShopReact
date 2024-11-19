@@ -26,7 +26,6 @@ const Container = styled.div`
 `
 
 const Select = styled.div`
-  position: absolute;
   right: 5px;
 `
 
@@ -34,7 +33,7 @@ const Header = styled.div`
   display: flex;
   gap: 5px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px;
 
   @media (max-width: 942px) {
@@ -69,29 +68,32 @@ const Title = styled.p`
 `
 
 const Image = styled.div`
-  object-fit: contain;
   width: 360px;
   height: 209px;
-  background-image: url(${props => props.src});
+  background-image: ${
+    props => props.src.indexOf("'")
+    ? `url(${props.src.replace(/'/g, "%27")})`
+    : `url(${props.src})`
+  };
   background-repeat: no-repeat;
   background-position: center;
-`
+  background-size: contain;
+`;
 
 const Description = styled.p`
-  text-overflow: ellipsis;
-  height: 69px;
+  width: 310px;
+  height: 100px;
   overflow: hidden;
-  letter-spacing: 0.5px;
-  line-height: 23px;
 `
+
 const Price = styled.del`
-  color: #f8593b;
+  color: red;
   font-size: 18px;
   font-weight: bold;
 `
 
 const DiscountPercentage = styled.span`
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
 `
 

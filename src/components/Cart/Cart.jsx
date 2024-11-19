@@ -193,7 +193,7 @@ const Cart = ({ productsCart, handleClickBack, handleChangeCount, handleClickRem
               </Remove>
               <PriceAndActionContainer>
                 <PriceContainer>
-                  <Price>${product.price}</Price>
+                  <Price>${product.price.toFixed(product.price / 100000 >= 1 ? 0 : 2)}</Price>
                   <SalePrice>${Number.parseFloat(product.price - (product.price * product.discountPercentage / 100)).toFixed(product.price / 100000 >= 1 ? 0 : 2)}</SalePrice>
                 </PriceContainer>
               </PriceAndActionContainer>

@@ -143,7 +143,7 @@ const Item = ({ product, handleChangeCount, handleClickRemove, handleClickItem }
       </TitleAndDescriptionContainer>
       <PriceAndActionContainer>
         <PriceContainer>
-          <Price>${product.price}</Price>
+          <Price>${(product.price).toFixed(2)}</Price>
           <SalePrice>
             ${Number.parseFloat(product.price - (product.price * product.discountPercentage / 100)).toFixed(product.price / 100000 >= 1 ? 0 : 2)}
           </SalePrice>

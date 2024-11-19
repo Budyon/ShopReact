@@ -35,6 +35,7 @@ const ProductContainer = () => {
   const handleChangeCount = (value) => setCount(prev => (prev += value))
 
   const handleClickAddToCart = () => {
+    
     dispatch(setProductToCart({
       image: product.thumbnail,
       smallImages: getSmallImages(product.images),
@@ -42,7 +43,7 @@ const ProductContainer = () => {
       title: product.title,
       description: product.description,
       initialPrice: product.price,
-      price: product.price,
+      price: product.price * count,
       discountPercentage: product.discountPercentage,
       count: count
     }))
